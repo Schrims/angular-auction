@@ -1,11 +1,10 @@
-# AngularJS Phone Catalog Tutorial Application
+# AngularJS Test Application
 
 
 ## Overview
 
 This application takes the developer through the process of building a web-application using
-AngularJS. The application is loosely based on the **Google Phone Gallery**, which no longer exists.
-Here is a historical reference: [Google Phone Gallery on WayBack][google-phone-gallery]
+AngularJS. The application is loosely based on a item list.
 
 Each tagged commit is a separate lesson teaching a single aspect of the framework.
 
@@ -57,22 +56,22 @@ git diff step-?..step-?
 ### step-1 _Static Template_
 
 - Add a stylesheet file ('app/app.css').
-- Add a static list with two phones.
+- Add a static list with two items.
 
 ### step-2 _Angular Templates_
 
-- Convert the static phone list to dynamic by:
-  - Creating a `PhoneListController` controller.
+- Convert the static item list to dynamic by:
+  - Creating a `ItemListController` controller.
   - Extracting the data from HTML into the controller as an in-memory dataset.
   - Converting the static document into a template with the use of the `ngRepeat` directive.
-- Add a simple unit test for the `PhoneListController` controller to show how to write tests and
+- Add a simple unit test for the `ItemListController` controller to show how to write tests and
   run them using Karma.
 
 ### step-3 _Components_
 
 - Introduce components.
-- Combine the controller and the template into a reusable, isolated `phoneList` component.
-- Refactor the application and tests to use the `phoneList` component.
+- Combine the controller and the template into a reusable, isolated `itemList` component.
+- Refactor the application and tests to use the `itemList` component.
 
 ### step-4 _Directory and File Organization_
 
@@ -95,15 +94,15 @@ git diff step-?..step-?
 
 ### step-6 _Two-way Data Binding_
 
-- Add an `age` property to the phone model.
-- Add a drop-down menu to control the phone list order.
+- Add an `id` property to the item model.
+- Add a drop-down menu to control the item list order.
 - Override the default order value in controller.
 - Add unit and end-to-end tests for this feature.
 
 ### step-7 _XHR & Dependency Injection_
 
 - Replace the in-memory dataset with data loaded from the server (in the form of a static
-  'phone.json' file to keep the tutorial backend agnostic):
+  'item.json' file to keep the tutorial backend agnostic):
   - The JSON data is loaded using the `$http` service.
 - Demonstrate the use of `services` and `dependency injection` (DI):
   - `$http` is injected into the controller through DI.
@@ -111,8 +110,8 @@ git diff step-?..step-?
 
 ### step-8 _Templating Links & Images_
 
-- Add a phone image and links to phone pages.
-- Add an end-to-end test that verifies the phone links.
+- Add a item image and links to item pages.
+- Add an end-to-end test that verifies the item links.
 - Tweak the CSS to style the page just a notch.
 
 ### step-9 _Routing & Multiple Views_
@@ -121,30 +120,30 @@ git diff step-?..step-?
   - Add the `ngRoute` module as a dependency.
   - Configure routes for the application.
   - Use the `ngView` directive in 'index.html'.
-- Create a phone list route (`/phones`):
-  - Map `/phones` to the existing `phoneList` component.
-- Create a phone detail route (`/phones/:phoneId`):
-  - Map `/phones/:phoneId` to a new `phoneDetail` component.
-  - Create a dummy `phoneDetail` component, which displays the selected phone ID.
-  - Pass the `phoneId` parameter to the component's controller via `$routeParams`.
+- Create a item list route (`/items`):
+  - Map `/items` to the existing `itemList` component.
+- Create a item detail route (`/items/:itemId`):
+  - Map `/items/:itemId` to a new `itemDetail` component.
+  - Create a dummy `itemDetail` component, which displays the selected item ID.
+  - Pass the `itemId` parameter to the component's controller via `$routeParams`.
 
 ### step-10 _More Templating_
 
-- Implement fetching data for the selected phone and rendering to the view:
-  - Use `$http` in `PhoneDetailController` to fetch the phone details from a JSON file.
+- Implement fetching data for the selected item and rendering to the view:
+  - Use `$http` in `ItemDetailController` to fetch the item details from a JSON file.
   - Create the template for the detail view.
-- Add CSS styles to make the phone detail page look "pretty-ish".
+- Add CSS styles to make the item detail page look "pretty-ish".
 
 ### step-11 _Custom Filters_
 
 - Implement a custom `checkmark` filter.
-- Update the `phoneDetail` template to use the `checkmark` filter.
+- Update the `itemDetail` template to use the `checkmark` filter.
 - Add a unit test for the `checkmark` filter.
 
 ### step-12 _Event Handlers_
 
-- Make the thumbnail images in the phone detail view clickable:
-  - Introduce a `mainImageUrl` property on `PhoneDetailController`.
+- Make the thumbnail images in the item detail view clickable:
+  - Introduce a `mainImageUrl` property on `ItemDetailController`.
   - Implement the `setImage()` method for changing the main image.
   - Use `ngClick` on the thumbnails to register a handler that changes the main image.
   - Add an end-to-end test for this feature.
@@ -152,22 +151,22 @@ git diff step-?..step-?
 ### step-13 _REST and Custom Services_
 
 - Replace `$http` with `$resource`.
-- Create a custom `Phone` service that represents the RESTful client.
+- Create a custom `Item` service that represents the RESTful client.
 - Use a custom Jasmine equality tester in unit tests to ignore irrelevant properties.
 
 ### step-14 _Animations_
 
 - Add animations to the application:
-  - Animate changes to the phone list, adding, removing and reordering phones with `ngRepeat`.
+  - Animate changes to the item list, adding, removing and reordering items with `ngRepeat`.
   - Animate view transitions with `ngView`.
-  - Animate changes to the main phone image in the phone detail view.
+  - Animate changes to the main item image in the item detail view.
 - Showcase three different kinds of animations:
   - CSS transition animations.
   - CSS keyframe animations.
   - JavaScript-based animations.
 
 
-## Development with `angular-phonecat`
+## Development with `angular-auction`
 
 The following docs describe how you can test and develop this application further.
 
@@ -234,9 +233,9 @@ app/                     --> all the source code of the app (along with unit tes
     phone/...            --> files for the `core.phone` submodule, including JS source code, specs
     core.module.js       --> the core module
   img/...                --> image files
-  phone-detail/...       --> files for the `phoneDetail` module, including JS source code, HTML templates, specs
-  phone-list/...         --> files for the `phoneList` module, including JS source code, HTML templates, specs
-  phones/...             --> static JSON files with phone data (used to fake a backend API)
+  item-detail/...        --> files for the `itemDetail` module, including JS source code, HTML templates, specs
+  item-list/...          --> files for the `itemList` module, including JS source code, HTML templates, specs
+  items/...              --> static JSON files with item data (used to fake a backend API)
   app.animations.css     --> hooks for running CSS animations with `ngAnimate`
   app.animations.js      --> hooks for running JS animations with `ngAnimate`
   app.config.js          --> app-wide configuration of Angular services
