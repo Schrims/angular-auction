@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" />
+      </p>
+
+      <p>
+        Sort by:
+        <select ng-model="$ctrl.order">
+          <option value="name">Alphabetical</option>
+          <option value="id">Id</option>
+          <option value="category">Category</option>
+        </select>
+      </p>
+
+    </div>
+    <div class="col-md-6">
+      <!--Body content-->
+
+      <table class="table">
+        <tr ng-repeat="item in $ctrl.items | filter:$ctrl.query | orderBy:$ctrl.order">
+          <td>{{item.id}}</td>
+          <td>
+            <a href="#/items/{{item.id}}" class="thumb">
+              <img ng-src="{{item.imageUrl}}" alt="{{item.name}}" />
+            </a>
+          </td>
+          <td>{{item.name}}</td>
+          <td>avail</td>
+          <td>current</td>
+          <td>mean</td>
+          <td>last seen</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>

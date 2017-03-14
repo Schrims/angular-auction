@@ -1,0 +1,44 @@
+[
+  {
+      "id": 1,
+      "name": "Foxflower",
+      "imageUrl": "img/herbs/inv_herbalism_70_foxflower.jpg",
+      "category": "herbs"
+  },
+  {
+      "id": 2,
+      "name": "Dreamleaf",
+      "imageUrl": "img/herbs/inv_herbalism_70_dreamleaf.jpg",
+      "category": "herbs"
+  },
+  {
+      "id": 3,
+      "name": "Aethril",
+      "imageUrl": "img/herbs/inv_herbalism_70_aethril.jpg",
+      "category": "herbs"
+  },
+  {
+      "id": 4,
+      "name": "Starlight Rose",
+      "imageUrl": "img/herbs/inv_herbalism_70_starlightrosepetals.jpg",
+      "category": "herbs"
+  },
+  {
+      "id": 5,
+      "name": "Fjarnskaggl",
+      "imageUrl": "img/herbs/inv_herbalism_70_fjarnskaggl.jpg",
+      "category": "herbs"
+  },
+  {
+      "id": 6,
+      "name": "Felwort",
+      "imageUrl": "img/herbs/inv_herbalism_70_felwort.jpg",
+      "category": "herbs"
+  },
+  {
+      "id": 99,
+      "name": "99",
+      "imageUrl": "",
+      "category": "not herbs"
+  }
+]
